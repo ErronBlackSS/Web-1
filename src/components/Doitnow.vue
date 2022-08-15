@@ -97,7 +97,7 @@
         @changeValue="changeValue"
         @readTask="readTask"
       />
-      <DoitnowNotificationTasks
+      <DoitnowNotificationTask
         v-if="!displayModal && tasksCount && !isLoading && notify"
         :name="firstTask.name"
         :uid="firstTask.uid"
@@ -129,7 +129,7 @@ import { USER_VIEWED_MODAL } from '@/store/actions/onboarding.js'
 
 import { NAVIGATOR_REQUEST } from '@/store/actions/navigator'
 import { USER_REQUEST } from '@/store/actions/user'
-import DoitnowNotificationTasks from './Doitnow/DoitnowNotificationTasks.vue'
+import DoitnowNotificationTask from './Doitnow/DoitnowNotificationTask.vue'
 
 export default {
   components: {
@@ -137,7 +137,7 @@ export default {
     DoitnowSkeleton,
     DoitnowTask,
     Icon,
-    DoitnowNotificationTasks
+    DoitnowNotificationTask
   },
   setup () {
     return {
@@ -176,7 +176,6 @@ export default {
       return window.location.origin
     },
     firstTask () {
-      console.log('firstTask', this.firstTask)
       if (this.slidesCopy.length && this.justRegistered) {
         return this.slidesCopy[0]
       }
