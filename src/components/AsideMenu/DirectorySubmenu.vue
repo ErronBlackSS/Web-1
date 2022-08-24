@@ -10,10 +10,13 @@
           v-for="(menuGroup, index) in menu"
           :key="`b-${index}`"
         >
-          <aside-menu-list
-            :menu="menuGroup"
-            @menu-click="menuClick"
-          />
+          <pre>{{ menuGroup }}</pre>
+          <router-link :to="'/' + menuGroup.path">
+            <aside-menu-list
+              :menu="menuGroup"
+              @menu-click="menuClick"
+            />
+          </router-link>
         </template>
       </div>
     </div>
@@ -224,7 +227,7 @@ export default {
           this.$store.commit('updateStackWithInitValue', navElem)
           this.$store.commit('basic', { key: 'greedSource', value: this.storeNavigator[item.path] })
         } else {
-          console.log(item.uid)
+          console.log(item, 'item')
           const navElem = {
             name: item.label,
             key: 'greedSource',

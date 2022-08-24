@@ -5,6 +5,7 @@ import Doitnow from '@/components/Doitnow.vue'
 import Empty from '@/components/Empty.vue'
 import Settings from '@/components/Settings/Settings.vue'
 import TaskFile from '@/views/TaskFile'
+import NotificationTasks from '@/components/NotificationTasks.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const ifNotAuthenticated = (to, from, next) => {
@@ -131,6 +132,13 @@ const routes = [
     path: '/directory',
     name: 'directory',
     component: Home,
+    beforeEnter: shouldRedirectToLogin
+  },
+  {
+    meta: {},
+    path: '/notifications',
+    name: 'notifications',
+    component: NotificationTasks,
     beforeEnter: shouldRedirectToLogin
   },
   {
