@@ -74,7 +74,7 @@
       -->
       <!-- Пока что будут подсвечиваться обе вкладки (на самописном роутинге и vue-router). После полного перехода на vue-router всё нормально буджет -->
       <router-link
-        v-slot="{ isActive}"
+        v-slot="{ isActive }"
         to="/colors"
       >
         <AsideMenuListItem
@@ -101,36 +101,41 @@
         </AsideMenuListItem>
       </router-link>
 
-      <AsideMenuListItem
-        :selected="isNotificationsSelected"
-        title="Уведомления"
-        @click="gotoNotifications"
+      <router-link
+        v-slot="{ isActive }"
+        to="/notifications"
       >
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 64 64"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+        <AsideMenuListItem
+          :selected="isActive"
+          title="Уведомления"
+          @click="closeMenu"
         >
-          <path
-            d="M51.0055 4.66667H13.72C8.71681 4.66667 4.66663 8.7169 4.66663 13.7201V40.821C4.66663 45.8242 8.71681 49.8744 13.72 49.8744H46.6575L56.1278 59.3448C56.5447 59.7618 57.1404 60 57.736 60C58.9868 60 59.9993 58.9874 59.9993 57.7366V13.7201C60.0589 8.7169 56.0087 4.66667 51.0055 4.66667ZM9.25287 13.7201C9.25287 11.2185 11.278 9.25296 13.72 9.25296H51.0055C53.5071 9.25296 55.4726 11.2781 55.4726 13.7201V52.2569L49.2187 46.0029C48.8017 45.5859 48.2061 45.3477 47.6105 45.3477H13.72C11.2184 45.3477 9.25287 43.3226 9.25287 40.8805V13.7201Z"
-            fill="currentColor"
-          />
-          <path
-            d="M32.3627 31.291C34.5665 31.291 36.3534 29.5041 36.3534 27.3003C36.3534 25.0965 34.5665 23.3097 32.3627 23.3097C30.159 23.3097 28.3721 25.0965 28.3721 27.3003C28.3721 29.5041 30.159 31.291 32.3627 31.291Z"
-            fill="currentColor"
-          />
-          <path
-            d="M44.2155 31.291C46.4193 31.291 48.2061 29.5041 48.2061 27.3003C48.2061 25.0965 46.4193 23.3097 44.2155 23.3097C42.0117 23.3097 40.2249 25.0965 40.2249 27.3003C40.2249 29.5041 42.0117 31.291 44.2155 31.291Z"
-            fill="currentColor"
-          />
-          <path
-            d="M20.51 31.291C22.7138 31.291 24.5006 29.5041 24.5006 27.3003C24.5006 25.0965 22.7138 23.3097 20.51 23.3097C18.3062 23.3097 16.5194 25.0965 16.5194 27.3003C16.5194 29.5041 18.3062 31.291 20.51 31.291Z"
-            fill="currentColor"
-          />
-        </svg>
-      </AsideMenuListItem>
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M51.0055 4.66667H13.72C8.71681 4.66667 4.66663 8.7169 4.66663 13.7201V40.821C4.66663 45.8242 8.71681 49.8744 13.72 49.8744H46.6575L56.1278 59.3448C56.5447 59.7618 57.1404 60 57.736 60C58.9868 60 59.9993 58.9874 59.9993 57.7366V13.7201C60.0589 8.7169 56.0087 4.66667 51.0055 4.66667ZM9.25287 13.7201C9.25287 11.2185 11.278 9.25296 13.72 9.25296H51.0055C53.5071 9.25296 55.4726 11.2781 55.4726 13.7201V52.2569L49.2187 46.0029C48.8017 45.5859 48.2061 45.3477 47.6105 45.3477H13.72C11.2184 45.3477 9.25287 43.3226 9.25287 40.8805V13.7201Z"
+              fill="currentColor"
+            />
+            <path
+              d="M32.3627 31.291C34.5665 31.291 36.3534 29.5041 36.3534 27.3003C36.3534 25.0965 34.5665 23.3097 32.3627 23.3097C30.159 23.3097 28.3721 25.0965 28.3721 27.3003C28.3721 29.5041 30.159 31.291 32.3627 31.291Z"
+              fill="currentColor"
+            />
+            <path
+              d="M44.2155 31.291C46.4193 31.291 48.2061 29.5041 48.2061 27.3003C48.2061 25.0965 46.4193 23.3097 44.2155 23.3097C42.0117 23.3097 40.2249 25.0965 40.2249 27.3003C40.2249 29.5041 42.0117 31.291 44.2155 31.291Z"
+              fill="currentColor"
+            />
+            <path
+              d="M20.51 31.291C22.7138 31.291 24.5006 29.5041 24.5006 27.3003C24.5006 25.0965 22.7138 23.3097 20.51 23.3097C18.3062 23.3097 16.5194 25.0965 16.5194 27.3003C16.5194 29.5041 18.3062 31.291 20.51 31.291Z"
+              fill="currentColor"
+            />
+          </svg>
+        </AsideMenuListItem>
+      </router-link>
     </div>
   </div>
 </template>
@@ -178,9 +183,6 @@ export default {
     },
     isColorsSelected () {
       return this.lastNavStack?.greedPath === 'colors'
-    },
-    isNotificationsSelected () {
-      return this.lastNavStack?.greedPath === 'notifications'
     }
   },
   methods: {
@@ -218,21 +220,6 @@ export default {
         this.$store.dispatch('asideMobileToggle', false)
       }
       cbOpenView()
-    },
-    gotoNotifications () {
-      this.selectSubMenuItem(this.isNotificationsSelected, () => {
-        // открываем вид
-        this.$store.commit('basic', { key: 'mainSectionState', value: 'greed' })
-        this.$store.commit('basic', { key: 'greedPath', value: 'notifications' })
-        const navElem = {
-          name: 'Цвета',
-          key: 'greedSource',
-          greedPath: 'notifications',
-          value: this.storeNavigator.notifications?.items
-        }
-        this.$store.commit('updateStackWithInitValue', navElem)
-        this.$store.commit('basic', { key: 'greedSource', value: navElem.value })
-      })
     },
     gotoColors () {
       this.selectSubMenuItem(this.isColorsSelected, () => {

@@ -110,6 +110,16 @@ export default {
     }
   },
   mounted () {
+    this.$store.commit('basic', { key: 'mainSectionState', value: 'greed' })
+    this.$store.commit('basic', { key: 'greedPath', value: 'notifications' })
+    const navElem = {
+      name: 'Цвета',
+      key: 'greedSource',
+      greedPath: 'notifications',
+      value: this.storeNavigator.notifications?.items
+    }
+    this.$store.commit('updateStackWithInitValue', navElem)
+    this.$store.commit('basic', { key: 'greedSource', value: navElem.value })
     this.$store.dispatch(NOTIFICATION_TASKS_GENERATE).then(() => {
       this.notificationtasks = this.notificationTasks
     })

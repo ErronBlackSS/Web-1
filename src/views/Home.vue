@@ -89,9 +89,6 @@
         v-if="greedPath === 'tags'"
         :tags="greedSource"
       />
-      <NotificationTasks
-        v-if="greedPath === 'notifications'"
-      />
       <TagWithChildren
         v-if="greedPath === 'tags_children'"
         :tags="greedSource"
@@ -145,7 +142,6 @@ import ModalBoxNotificationInstruction from '@/components/modals/ModalBoxNotific
 import Other from '@/components/Other.vue'
 import Doitnow from '@/components/Doitnow.vue'
 import TagWithChildren from '@/components/Tags/TagWithChildren.vue'
-import NotificationTasks from '@/components/NotificationTasks.vue'
 
 import { NAVIGATOR_REQUEST } from '@/store/actions/navigator'
 import { USER_INVITE_ME } from '@/store/actions/user'
@@ -177,7 +173,6 @@ export default {
     ReglamentContent,
     Employees,
     Assignments,
-    NotificationTasks,
     ModalBox
   },
   data () {

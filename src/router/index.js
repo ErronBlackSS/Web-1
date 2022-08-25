@@ -6,6 +6,7 @@ import Empty from '@/components/Empty.vue'
 import Settings from '@/components/Settings/Settings.vue'
 import TaskFile from '@/views/TaskFile'
 import Colors from '@/components/Colors.vue'
+import NotificationTasks from '@/components/NotificationTasks.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -156,6 +157,15 @@ const routes = [
     path: '/colors',
     name: 'colors',
     component: Colors,
+    beforeEnter: shouldRedirectToLogin
+  },
+  {
+    meta: {
+      layout: Home
+    },
+    path: '/notifications',
+    name: 'notifications',
+    component: NotificationTasks,
     beforeEnter: shouldRedirectToLogin
   },
   {
